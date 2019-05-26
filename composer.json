@@ -16,7 +16,8 @@
   },
   "autoload": {
     "psr-4": {
-      "QUI\\Auth\\Plivo\\": "src/QUI/Auth/Plivo"
+      "QUI\\Auth\\Plivo\\": "src/QUI/Auth/Plivo",
+      "QUI\\Registration\\Plivo\\": "src/QUI/Registration/Plivo"
     }
   }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locales>
+    <groups name="quiqqer/authplivo" datatype="js,php">
+        <!-- Package -->
+        <locale name="package.title">
+            <de><![CDATA[SMS Registrierung und Login für QUIQQER via Plivo]]></de>
+            <en><![CDATA[SMS registration and login for QUIQQER]]></en>
+        </locale>
+        <locale name="package.description">
+            <de><![CDATA[SMS Registrierung und Authentifikation mittels Plivo]]></de>
+            <en><![CDATA[SMS registration and authentication via Plivo]]></en>
+        </locale>
+
+
+    </groups>
+</locales>

@@ -1,0 +1,35 @@
+<quiqqer>
+    <package>
+        <title>
+            <locale group="quiqqer/authplivo" var="package.title"/>
+        </title>
+
+        <description>
+            <locale group="quiqqer/authplivo" var="package.description"/>
+        </description>
+
+        <image src="URL_OPT_DIR/quiqqer/authplivo/bin/images/Logo.jpg"/>
+
+        <preview>
+        </preview>
+
+        <support>
+            <email><![CDATA[support@pcsg.de]]></email>
+            <forum><![CDATA[https://community.quiqqer.com]]></forum>
+            <source><![CDATA[https://dev.quiqqer.com/quiqqer/authplivo]]></source>
+            <issues><![CDATA[https://dev.quiqqer.com/quiqqer/authplivo/issues]]></issues>
+            <wiki><![CDATA[https://dev.quiqqer.com/quiqqer/authplivo/wikis/home]]></wiki>
+        </support>
+
+        <copyright>
+            <name><![CDATA[PCSG - Computer & Internet Service OHG]]></name>
+            <license><![CDATA[]]></license>
+        </copyright>
+
+        <provider>
+            <auth src="\QUI\Auth\Plivo\Auth"/>
+            <registrar src="\QUI\Registration\Plivo\Registrar"/>
+        </provider>
+
+    </package>
+</quiqqer>
