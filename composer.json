@@ -1,0 +1,22 @@
+{
+  "name": "quiqqer/authplivo",
+  "type": "quiqqer-module",
+  "description": "QUIQQER registration and authentication with SMS over Plivo",
+  "version": "dev-master",
+  "license": "GPL-3.0+",
+  "homepage": "https://www.quiqqer.com",
+  "authors": [],
+  "support": {
+    "email": "support@pcsg.de",
+    "url": "http://www.pcsg.de"
+  },
+  "require": {
+    "quiqqer/quiqqer": ">=1.1|dev-master|dev-dev",
+    "quiqqer/frontend-users": "^1.1|dev-master|dev-dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "QUI\\Auth\\Plivo\\": "src/QUI/Auth/Plivo"
+    }
+  }
+}
