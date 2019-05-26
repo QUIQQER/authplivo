@@ -15,6 +15,17 @@
 
     <groups name="quiqqer/authplivo" datatype="php">
 
+        <locale name="registrar.title">
+            <de><![CDATA[Plivo Registrierung]]></de>
+            <en><![CDATA[Plivo Registration]]></en>
+        </locale>
+        <locale name="registrar.description">
+            <de><![CDATA[
+            Plivo Registrierung ermöglicht es eine Registrierung über einen SMS Auth Code zu starten.
+            ]]></de>
+            <en><![CDATA[Plivo Registration allows you to start a registration via an SMS Auth Code.]]></en>
+        </locale>
+
         <locale name="settings.title">
             <de><![CDATA[Plivo Auth Einstellungen]]></de>
             <en><![CDATA[Plivo Auth Settings]]></en>
@@ -46,7 +57,7 @@
             <de><![CDATA[AUTH Token]]></de>
             <en><![CDATA[AUTH Token]]></en>
         </locale>
-        <locale name="settings.apiSettings.authId.description">
+        <locale name="settings.apiSettings.authToken.description">
             <de><![CDATA[
             Auth Token des Plivo Client, über welches die API-Kommunikation stattfindet.
             Siehe <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
@@ -74,7 +85,7 @@
             <de><![CDATA[AUTH ID]]></de>
             <en><![CDATA[AUTH ID]]></en>
         </locale>
-        <locale name="settings.sandboxSettings.authToken.title" html="true">
+        <locale name="settings.sandboxSettings.authId.description" html="true">
             <de><![CDATA[
             Auth ID des Plivo Client, über welches die API-Kommunikation stattfindet in der Sandbox.
             Siehe <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
