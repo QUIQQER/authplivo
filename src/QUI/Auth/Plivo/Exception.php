@@ -6,6 +6,8 @@
 
 namespace QUI\Auth\Plivo;
 
+use QUI;
+
 /**
  * Class Exception
  *
