@@ -1,0 +1,9 @@
+.quiqqer-authplivo-registrar-form p {
+    font-size: 14px;
+}
+
+.quiqqer-authplivo-registrar-form label {
+    clear: both;
+    display: inline-block;
+    width: 100%;
+}

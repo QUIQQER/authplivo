@@ -10,7 +10,6 @@
             <de><![CDATA[SMS Registrierung und Authentifikation mittels Plivo]]></de>
             <en><![CDATA[SMS registration and authentication via Plivo]]></en>
         </locale>
-
     </groups>
 
     <groups name="quiqqer/authplivo" datatype="php">
@@ -111,6 +110,36 @@
             ]]></en>
         </locale>
 
+        <locale name="registrar.javascript_required">
+            <de><![CDATA[
+            JavaScript ist in Ihrem Browser deaktiviert. Für die Registrierung mit Ihrem Google-Konto aktivieren Sie bitte JavaScript.
+            ]]></de>
+            <en><![CDATA[
+            JavaScript is disabled in your browser. To register with your Google Account, please enable JavaScript.
+            ]]></en>
+        </locale>
+
+        <locale name="control.signup.description">
+            <de><![CDATA[
+                Gebe bitte Deine Telefonnummer ein. Wir senden Dir eine SMS mit einem Bestätigungscode, den du auf dem nächsten Bildschirm eingeben musst.
+            ]]></de>
+            <en><![CDATA[
+                Enter your phone number. We will send you a text message with a verification code that you’ll need to enter on the next screen.
+            ]]></en>
+        </locale>
+        <locale name="control.signup.placeholder">
+            <de><![CDATA[+]]></de>
+            <en><![CDATA[+]]></en>
+        </locale>
+
+        <locale name="exception.invalid">
+            <de><![CDATA[
+                Es ist leider ein Fehler aufgetreten und die Registrierung ist ungültig. Bitte versuche es noch einmal.
+            ]]></de>
+            <en><![CDATA[
+                An error has occurred and the registration is invalid. Please try again.
+            ]]></en>
+        </locale>
     </groups>
 
 </locales>
