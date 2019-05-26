@@ -11,6 +11,95 @@
             <en><![CDATA[SMS registration and authentication via Plivo]]></en>
         </locale>
 
+    </groups>
+
+    <groups name="quiqqer/authplivo" datatype="php">
+
+        <locale name="settings.title">
+            <de><![CDATA[Plivo Auth Einstellungen]]></de>
+            <en><![CDATA[Plivo Auth Settings]]></en>
+        </locale>
+        <locale name="settings.category.settings.title">
+            <de><![CDATA[Plivo Einstellungen]]></de>
+            <en><![CDATA[Plivo Settings]]></en>
+        </locale>
+
+        <locale name="settings.apiSettings.title">
+            <de><![CDATA[Live API Einstellungen]]></de>
+            <en><![CDATA[Live API Settings]]></en>
+        </locale>
+        <locale name="settings.apiSettings.authId.title">
+            <de><![CDATA[AUTH ID]]></de>
+            <en><![CDATA[AUTH ID]]></en>
+        </locale>
+        <locale name="settings.apiSettings.authId.description">
+            <de><![CDATA[
+            Auth ID des Plivo Client, über welches die API-Kommunikation stattfindet.
+            Siehe <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></de>
+            <en><![CDATA[
+            Auth ID of the Plivo Client via which the API communication takes place.
+            See <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></en>
+        </locale>
+        <locale name="settings.apiSettings.authToken.title">
+            <de><![CDATA[AUTH Token]]></de>
+            <en><![CDATA[AUTH Token]]></en>
+        </locale>
+        <locale name="settings.apiSettings.authId.description">
+            <de><![CDATA[
+            Auth Token des Plivo Client, über welches die API-Kommunikation stattfindet.
+            Siehe <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></de>
+            <en><![CDATA[
+            Auth Token of the Plivo Client via which the API communication takes place.
+            See <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></en>
+        </locale>
+
+
+        <locale name="settings.sandboxSettings.title">
+            <de><![CDATA[Sandbox API Einstellungen]]></de>
+            <en><![CDATA[Sandbox API Settings]]></en>
+        </locale>
+        <locale name="settings.sandboxSettings.useSandbox.title">
+            <de><![CDATA[Sandbox verwenden]]></de>
+            <en><![CDATA[Use Sandbox]]></en>
+        </locale>
+        <locale name="settings.sandboxSettings.useSandbox.description">
+            <de><![CDATA[Die Sandbox ist zu testzwecken um die API zu testen.]]></de>
+            <en><![CDATA[The sandbox is for testing purposes to test the API.]]></en>
+        </locale>
+        <locale name="settings.sandboxSettings.authId.title">
+            <de><![CDATA[AUTH ID]]></de>
+            <en><![CDATA[AUTH ID]]></en>
+        </locale>
+        <locale name="settings.sandboxSettings.authToken.title" html="true">
+            <de><![CDATA[
+            Auth ID des Plivo Client, über welches die API-Kommunikation stattfindet in der Sandbox.
+            Siehe <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></de>
+            <en><![CDATA[
+            Auth ID of the Plivo Client via which the API communication takes place in the sandbox.
+            See <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></en>
+        </locale>
+
+        <locale name="settings.sandboxSettings.authToken.title">
+            <de><![CDATA[AUTH Token]]></de>
+            <en><![CDATA[AUTH Token]]></en>
+        </locale>
+        <locale name="settings.sandboxSettings.authToken.description" html="true">
+            <de><![CDATA[
+            Auth Token des Plivo Client, über welches die API-Kommunikation stattfindet in der Sandbox.
+            Siehe <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></de>
+            <en><![CDATA[
+            Auth Token of the Plivo Client via which the API communication takes place in the sandbox.
+            See <a href="https://console.developers.google.com/apis" target="_blank">https://api-reference.plivo.com/latest/curl/introduction/overview</a>.
+            ]]></en>
+        </locale>
 
     </groups>
+
 </locales>

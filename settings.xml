@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiqqer>
+    <settings>
+
+        <config>
+            <section name="general">
+                <conf name="useSandbox">
+                    <type><![CDATA[bool]]></type>
+                </conf>
+            </section>
+            <section name="apiSettings">
+                <conf name="authId">
+                    <type><![CDATA[string]]></type>
+                </conf>
+                <conf name="authToken">
+                    <type><![CDATA[string]]></type>
+                </conf>
+            </section>
+            <section name="sandboxSettings">
+                <conf name="authId">
+                    <type><![CDATA[string]]></type>
+                </conf>
+                <conf name="authToken">
+                    <type><![CDATA[string]]></type>
+                </conf>
+            </section>
+        </config>
+
+
+        <window>
+            <title>
+                <locale group="quiqqer/authplivo" var="settings.title"/>
+            </title>
+            <params>
+                <icon>fa fa-phone</icon>
+            </params>
+
+            <categories>
+                <category name="settings">
+                    <text>
+                        <locale group="quiqqer/authplivo" var="settings.category.settings.title"/>
+                    </text>
+                    <icon>fa fa-cogs</icon>
+
+                    <settings title="apiSettings" name="apiSettings">
+                        <title>
+                            <locale group="quiqqer/authplivo" var="settings.apiSettings.title"/>
+                        </title>
+
+                        <input conf="apiSettings.authId" type="text">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.apiSettings.authId.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo" var="settings.apiSettings.authId.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="apiSettings.authToken" type="text">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.apiSettings.authToken.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo" var="settings.apiSettings.authToken.description"/>
+                            </description>
+                        </input>
+                    </settings>
+
+                    <settings title="sandboxSettings" name="sandboxSettings">
+                        <title>
+                            <locale group="quiqqer/authplivo" var="settings.sandboxSettings.title"/>
+                        </title>
+
+                        <input conf="general.useSandbox" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.useSandbox.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.useSandbox.description"/>
+                            </description>
+                        </input>
+                        <input conf="sandboxSettings.authId" type="text">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.authId.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.authId.description"/>
+                            </description>
+                        </input>
+
+                        <input conf="sandboxSettings.authToken" type="text">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.authToken.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.authToken.description"/>
+                            </description>
+                        </input>
+                    </settings>
+
+                </category>
+            </categories>
+        </window>
+
+    </settings>
+</quiqqer>
