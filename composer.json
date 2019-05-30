@@ -19,7 +19,7 @@
     "psr-4": {
       "QUI\\Auth\\Plivo\\": "src/QUI/Auth/Plivo",
       "QUI\\Plivo\\": "src/QUI/Plivo",
-      "QUI\\Registration\\Plivo\\": "src/QUI/Registration/Plivo",
+      "QUI\\Registration\\Plivo\\": "src/QUI/Registration/Plivo"
     }
   }
 }
