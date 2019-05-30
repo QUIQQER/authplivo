@@ -1,0 +1,82 @@
+.quiqqer-authplivo-registrar-form-phone {
+    max-width: 360px !important;
+    position: relative;
+    width: 100%;
+
+}
+
+.quiqqer-authplivo-registrar-form [type="tel"] {
+    background: #fff;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0;
+    max-width: 360px;
+    outline: none;
+    padding-left: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.quiqqer-authplivo-registrar-form button[name="send-sms"] {
+    line-height: 25px;
+    max-width: 360px;
+    margin: 5px 0 0 0;
+    width: 100%;
+}
+
+.quiqqer-authplivo-registrar-form-country {
+    align-items: center;
+    background-color: #eaeaea;
+    border: 1px solid #cacaca;
+    border-radius: 3px 0 0 3px;
+    bottom: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+    z-index: 2;
+}
+
+.quiqqer-authplivo-registrar-form-country:hover {
+    background: #fff;
+}
+
+.quiqqer-authplivo-registrar-country-list {
+    list-style: none;
+    position: absolute;
+    z-index: 15;
+    padding: 0;
+    margin: 10px 0 10px -1px;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .35);
+    background-color: #fff;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: scroll;
+    outline: none;
+    border-radius: 0 0 3px 3px;
+}
+
+.quiqqer-authplivo-registrar-country-list-entry {
+    display: flex;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.quiqqer-authplivo-registrar-country-list-entry:hover {
+    background: #f1f1f1;
+}
+
+.quiqqer-authplivo-registrar-country-list-entry-flag {
+    flex-shrink: 0;
+    padding: 5px;
+}
+
+.quiqqer-authplivo-registrar-country-list-entry-title {
+    flex-grow: 1;
+    padding: 5px 10px 5px 0;
+}
