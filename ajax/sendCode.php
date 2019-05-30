@@ -1,16 +1,13 @@
 <?php
 
 /**
- * Search for the desktop
  *
- * @param string $search
- * @param string $params
- *
- * @return array
+ * @param string $phone
  */
 QUI::$Ajax->registerFunction(
-    'package_quiqqer_authplivio_ajax_sendCode',
+    'package_quiqqer_authplivo_ajax_sendCode',
     function ($phone) {
+        QUI\Plivo\Plivo::sendSMS($phone, 'this is a test');
     },
     ['phone']
 );

@@ -24,7 +24,8 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
         Binds: [
             '$onImport',
             '$countryClick',
-            '$countrySelect'
+            '$countrySelect',
+            '$sendAuthCode'
         ],
 
         initialize: function (options) {
@@ -33,6 +34,7 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
             this.$Input           = null;
             this.$CountrySelect   = null;
             this.$CountryDropDown = null;
+            this.$SendSMS         = null;
 
             this.$current = null;
 
@@ -45,7 +47,11 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
          * event: on import
          */
         $onImport: function () {
-            this.$Input         = this.getElm().getElement('[type="tel"]');
+            this.$Input = this.getElm().getElement('[type="tel"]');
+
+            this.$SendSMS = this.getElm().getElement('[name="send-sms"]');
+            this.$SendSMS.addEvent('click', this.$sendAuthCode);
+
             this.$CountrySelect = this.getElm().getElement('.quiqqer-authplivo-registrar-form-country');
             this.$CountrySelect.addEvent('click', this.$countryClick);
         },
@@ -179,16 +185,34 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
         },
 
         /**
+         * event: send auth code
+         *
+         * @param event
+         */
+        $sendAuthCode: function (event) {
+            event.stop();
+
+            this.$SendSMS.set('disabled', true);
+            this.send().then(function () {
+                this.$SendSMS.set('disabled', false);
+            }.bind(this));
+        },
+
+        /**
          *
          * @return {Promise}
          */
         send: function () {
-            return new Promise(function () {
-                QUIAjax.post('package_quiqqer_authplivio_ajax_sendCode', function () {
+            var self = this;
 
+            return new Promise(function (resolve) {
+                QUIAjax.post('package_quiqqer_authplivo_ajax_sendCode', function (result) {
+
+
+                    resolve();
                 }, {
-                    'package': 'quiqqer/authplivio',
-
+                    'package': 'quiqqer/authplivo',
+                    phone    : self.$Input.value
                 });
             });
         }

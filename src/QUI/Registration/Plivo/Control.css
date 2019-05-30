@@ -20,6 +20,7 @@
 }
 
 .quiqqer-authplivo-registrar-form button[name="send-sms"] {
+    clear: both;
     line-height: 25px;
     max-width: 360px;
     margin: 5px 0 0 0;
