@@ -72,18 +72,18 @@ class Plivo
      */
     public static function getAuthCode($phoneNumber)
     {
-        $decrypt = QUI\Security\Encryption::decrypt($phoneNumber);
-
         try {
+            $encrypt = QUI\Security\Encryption::encrypt($phoneNumber);
+
             $result = QUI::getDataBase()->fetch([
                 'from'  => self::table(),
                 'where' => [
-                    'phone' => $decrypt
+                    'phone' => $encrypt
                 ]
             ]);
 
             if (isset($result[0])) {
-                return QUI\Security\Encryption::encrypt($result[0]['code']);
+                return QUI\Security\Encryption::decrypt($result[0]['code']);
             }
         } catch (QUI\Exception $Exception) {
             throw new Exception([
@@ -97,10 +97,11 @@ class Plivo
         try {
             // @todo length as setting
             $newCode = QUI\Security\Password::generateRandom(6);
+            $newCode = \strtoupper($newCode);
 
             QUI::getDataBase()->insert(self::table(), [
-                'phone' => $decrypt,
-                'code'  => QUI\Security\Encryption::decrypt($newCode)
+                'phone' => $encrypt,
+                'code'  => QUI\Security\Encryption::encrypt($newCode)
             ]);
 
             return $newCode;
@@ -121,12 +122,11 @@ class Plivo
      */
     public static function sendAuthCode($phoneNumber)
     {
-        self::sendSMS(
-            $phoneNumber,
-            QUI::getLocale()->get('quiqqer/authplivo', 'auth.message', [
-                'code' => self::getAuthCode($phoneNumber)
-            ])
-        );
+        $message = QUI::getLocale()->get('quiqqer/authplivo', 'auth.message', [
+            'code' => self::getAuthCode($phoneNumber)
+        ]);
+
+        self::sendSMS($phoneNumber, $message);
     }
 
     /**
