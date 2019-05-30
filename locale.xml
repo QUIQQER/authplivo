@@ -25,6 +25,15 @@
             <en><![CDATA[Plivo Registration allows you to start a registration via an SMS Auth Code.]]></en>
         </locale>
 
+        <locale name="auth.message">
+            <de><![CDATA[
+                Nur noch ein kurzer Schritt zu deiner Registrieurng. Hier ist dein Authentifizierungs-Code: [code]
+                ]]></de>
+            <en><![CDATA[
+                Just a quick step to your registration. Here is your authentication code: [code]
+            ]]></en>
+        </locale>
+
         <locale name="settings.title">
             <de><![CDATA[Plivo Auth Einstellungen]]></de>
             <en><![CDATA[Plivo Auth Settings]]></en>

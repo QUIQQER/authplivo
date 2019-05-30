@@ -24,6 +24,16 @@ class Plivo
     protected static $Client = null;
 
     /**
+     * Return the main table
+     *
+     * @return string
+     */
+    public static function table()
+    {
+        return QUI::getDBTableName('quiqqer_auth_plivo');
+    }
+
+    /**
      * Return the Plivo client
      *
      * @return RestClient|null
@@ -53,6 +63,73 @@ class Plivo
     }
 
     /**
+     * Return the auth code for the phone number
+     *
+     * @param string|integer $phoneNumber
+     * @return string
+     *
+     * @throws Exception
+     */
+    public static function getAuthCode($phoneNumber)
+    {
+        $decrypt = QUI\Security\Encryption::decrypt($phoneNumber);
+
+        try {
+            $result = QUI::getDataBase()->fetch([
+                'from'  => self::table(),
+                'where' => [
+                    'phone' => $decrypt
+                ]
+            ]);
+
+            if (isset($result[0])) {
+                return QUI\Security\Encryption::encrypt($result[0]['code']);
+            }
+        } catch (QUI\Exception $Exception) {
+            throw new Exception([
+                'quiqqer/authplivo',
+                'exception.something.wrong'
+            ]);
+        }
+
+        // create new code
+
+        try {
+            // @todo length as setting
+            $newCode = QUI\Security\Password::generateRandom(6);
+
+            QUI::getDataBase()->insert(self::table(), [
+                'phone' => $decrypt,
+                'code'  => QUI\Security\Encryption::decrypt($newCode)
+            ]);
+
+            return $newCode;
+        } catch (QUI\Exception $Exception) {
+            throw new Exception([
+                'quiqqer/authplivo',
+                'exception.something.wrong'
+            ]);
+        }
+    }
+
+    /**
+     * Send the auth code to the phone number
+     * Generate a new auth code if no code for this phone number exists
+     *
+     * @param string|int $phoneNumber
+     * @throws Exception
+     */
+    public static function sendAuthCode($phoneNumber)
+    {
+        self::sendSMS(
+            $phoneNumber,
+            QUI::getLocale()->get('quiqqer/authplivo', 'auth.message', [
+                'code' => self::getAuthCode($phoneNumber)
+            ])
+        );
+    }
+
+    /**
      * Send a sms
      *
      * @param string|int $phoneNumber
@@ -73,7 +150,7 @@ class Plivo
             QUI\System\Log::addError($Exception->getMessage());
 
             throw new Exception(
-                'Could not send message.',
+                ['quiqqer/authplivo', 'exception.something.wrong'],
                 404
             );
         }
