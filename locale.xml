@@ -67,6 +67,19 @@
             ]]></en>
         </locale>
 
+        <locale name="settings.general.title">
+            <de><![CDATA[Allgemeine Plivo Einstellungen]]></de>
+            <en><![CDATA[General Plivo settings]]></en>
+        </locale>
+        <locale name="settings.general.mainPhoneNo.title">
+            <de><![CDATA[Versandnummer]]></de>
+            <en><![CDATA[Sending number]]></en>
+        </locale>
+        <locale name="settings.general.mainPhoneNo.description">
+            <de><![CDATA[Mit dieser Nummer werden die Auth Codes versendet.]]></de>
+            <en><![CDATA[The Auth Codes are sent with this number.]]></en>
+        </locale>
+
 
         <locale name="settings.sandboxSettings.title">
             <de><![CDATA[Sandbox API Einstellungen]]></de>

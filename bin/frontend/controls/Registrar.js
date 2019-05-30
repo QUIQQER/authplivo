@@ -176,6 +176,21 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
          */
         $getCountryFlag: function (code, country) {
             return '<img src="' + URL_BIN_DIR + '16x16/flags/' + code + '.png" alt="' + country + '" />';
+        },
+
+        /**
+         *
+         * @return {Promise}
+         */
+        send: function () {
+            return new Promise(function () {
+                QUIAjax.post('package_quiqqer_authplivio_ajax_sendCode', function () {
+
+                }, {
+                    'package': 'quiqqer/authplivio',
+
+                });
+            });
         }
     });
 });

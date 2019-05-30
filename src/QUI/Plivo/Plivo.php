@@ -65,7 +65,8 @@ class Plivo
     {
         try {
             $Config       = QUI::getPackage('quiqqer/authplivo')->getConfig();
-            $sourceNumber = $Config->getValue('generall', 'sourceNumber');
+            $sourceNumber = $Config->getValue('general', 'mainPhoneNo');
+            $sourceNumber = self::cleanupPhoneNumber($sourceNumber);
 
             $Client = self::getClient();
         } catch (QUI\Exception $Exception) {
@@ -82,5 +83,19 @@ class Plivo
             [$phoneNumber],
             $message
         );
+    }
+
+    /**
+     * Return a cleaned phone number
+     *
+     * @param string $number
+     * @return string
+     */
+    public static function cleanupPhoneNumber($number)
+    {
+        $number = \str_replace(['+', ' '], '', $number);
+        $number = \trim($number);
+
+        return $number;
     }
 }

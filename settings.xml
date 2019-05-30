@@ -4,6 +4,9 @@
 
         <config>
             <section name="general">
+                <conf name="mainPhoneNo">
+                    <type><![CDATA[string]]></type>
+                </conf>
                 <conf name="useSandbox">
                     <type><![CDATA[bool]]></type>
                 </conf>
@@ -41,6 +44,21 @@
                         <locale group="quiqqer/authplivo" var="settings.category.settings.title"/>
                     </text>
                     <icon>fa fa-cogs</icon>
+
+                    <settings title="general" name="general">
+                        <title>
+                            <locale group="quiqqer/authplivo" var="settings.general.title"/>
+                        </title>
+
+                        <input conf="general.mainPhoneNo" type="text">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.general.mainPhoneNo.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo" var="settings.general.mainPhoneNo.description"/>
+                            </description>
+                        </input>
+                    </settings>
 
                     <settings title="apiSettings" name="apiSettings">
                         <title>
