@@ -10,6 +10,9 @@
                 <conf name="useSandbox">
                     <type><![CDATA[bool]]></type>
                 </conf>
+                <conf name="debugCodeViaLog">
+                    <type><![CDATA[bool]]></type>
+                </conf>
             </section>
             <section name="apiSettings">
                 <conf name="authId">
@@ -94,9 +97,20 @@
                                 <locale group="quiqqer/authplivo" var="settings.sandboxSettings.useSandbox.title"/>
                             </text>
                             <description>
-                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.useSandbox.description"/>
+                                <locale group="quiqqer/authplivo"
+                                        var="settings.sandboxSettings.useSandbox.description"/>
                             </description>
                         </input>
+                        <input conf="general.debugCodeViaLog" type="checkbox">
+                            <text>
+                                <locale group="quiqqer/authplivo" var="settings.sandboxSettings.debugCodeViaLog.title"/>
+                            </text>
+                            <description>
+                                <locale group="quiqqer/authplivo"
+                                        var="settings.sandboxSettings.debugCodeViaLog.description"/>
+                            </description>
+                        </input>
+
                         <input conf="sandboxSettings.authId" type="text">
                             <text>
                                 <locale group="quiqqer/authplivo" var="settings.sandboxSettings.authId.title"/>

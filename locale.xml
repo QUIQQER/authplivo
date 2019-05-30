@@ -154,6 +154,44 @@
             <en><![CDATA[+]]></en>
         </locale>
 
+        <locale name="" html="true">
+            <de><![CDATA[
+            Gebe bitte den Code ein den wir dir per SMS zugesendet haben. Bedenke, dies kann einige Zeit dauern bis die SMS bei dir eingetroffen ist.
+            ]]></de>
+            <en><![CDATA[
+            Please enter the code we sent you via SMS. Note, this may take some time until you receive the SMS.
+            ]]></en>
+        </locale>
+        <locale name="control.signup.code.placeholder">
+            <de><![CDATA[Bitte gebe deinen zugesendeten Code ein.]]></de>
+            <en><![CDATA[Please enter the code you received.]]></en>
+        </locale>
+        <locale name="control.signup.smsButton">
+            <de><![CDATA[SMS senden]]></de>
+            <en><![CDATA[Send SMS]]></en>
+        </locale>
+        <locale name="control.signup.authButton">
+            <de><![CDATA[Registrieren]]></de>
+            <en><![CDATA[Sign up]]></en>
+        </locale>
+
+        <locale name="settings.sandboxSettings.debugCodeViaLog.title">
+            <de><![CDATA[Kein SMS Versand]]></de>
+            <en><![CDATA[No SMS sending]]></en>
+        </locale>
+        <locale name="settings.sandboxSettings.debugCodeViaLog.description">
+            <de><![CDATA[
+            Diese Option ist zum Testen und Debuggen des generierten Auth-Codes.
+            Wenn diese Option aktiv ist wird kein Code via SMS versendet und keine Credits verbraucht.
+            Stattdessen wird der generierte Code in die Log geschrieben.
+            ]]></de>
+            <en><![CDATA[
+            This option is for testing and debugging the generated Auth code.
+            If this option is active no code will be sent via SMS and no credits will be used.
+            Instead the generated code is written into the log.
+            ]]></en>
+        </locale>
+
         <locale name="exception.invalid">
             <de><![CDATA[
                 Es ist leider ein Fehler aufgetreten und die Registrierung ist ungültig. Bitte versuche es noch einmal.

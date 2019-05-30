@@ -36,6 +36,9 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
             this.$CountryDropDown = null;
             this.$SendSMS         = null;
 
+            this.$SectionGenerate = null;
+            this.$SectionAuth     = null;
+
             this.$current = null;
 
             this.addEvents({
@@ -47,7 +50,9 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
          * event: on import
          */
         $onImport: function () {
-            this.$Input = this.getElm().getElement('[type="tel"]');
+            this.$Input           = this.getElm().getElement('[type="tel"]');
+            this.$SectionGenerate = this.getElm().getElement('.quiqqer-authplivo-registrar-form-getCode');
+            this.$SectionAuth     = this.getElm().getElement('.quiqqer-authplivo-registrar-form-auth');
 
             this.$SendSMS = this.getElm().getElement('[name="send-sms"]');
             this.$SendSMS.addEvent('click', this.$sendAuthCode);
@@ -192,10 +197,39 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
         $sendAuthCode: function (event) {
             event.stop();
 
+            var self = this;
+
             this.$SendSMS.set('disabled', true);
+
             this.send().then(function () {
-                this.$SendSMS.set('disabled', false);
-            }.bind(this));
+                moofx(self.$SectionGenerate).animate({
+                    left   : -20,
+                    opacity: 0
+                }, {
+                    duration: 300,
+                    callback: function () {
+                        self.$SendSMS.set('disabled', false);
+                        self.$SectionGenerate.setStyles({
+                            display: 'none'
+                        });
+
+
+                        self.$SectionAuth.setStyle('left', -20);
+                        self.$SectionAuth.setStyle('opacity', 0);
+                        self.$SectionAuth.setStyle('display', null);
+
+                        moofx(self.$SectionAuth).animate({
+                            left   : 0,
+                            opacity: 1
+                        }, {
+                            duration: 300,
+                            callback: function () {
+
+                            }
+                        });
+                    }
+                });
+            });
         },
 
         /**
@@ -206,11 +240,7 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
             var self = this;
 
             return new Promise(function (resolve) {
-                QUIAjax.post('package_quiqqer_authplivo_ajax_sendCode', function (result) {
-
-
-                    resolve();
-                }, {
+                QUIAjax.post('package_quiqqer_authplivo_ajax_sendCode', resolve, {
                     'package': 'quiqqer/authplivo',
                     phone    : self.$Input.value
                 });

@@ -81,3 +81,19 @@
     flex-grow: 1;
     padding: 5px 10px 5px 0;
 }
+
+/** AUTH part - Code insertion
+ =============================== */
+
+.quiqqer-authplivo-registrar-form-auth-code input {
+    background: #fff;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0;
+    max-width: 360px;
+    outline: none;
+    position: relative;
+    width: 100%;
+}

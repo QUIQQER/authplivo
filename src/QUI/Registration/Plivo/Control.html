@@ -3,16 +3,34 @@
 </noscript>
 
 <div class="quiqqer-authplivo-registrar-form quiqqer-authplivo__hidden">
-    <p>
-        {locale group="quiqqer/authplivo" var="control.signup.description"}
-    </p>
+    <section class="quiqqer-authplivo-registrar-form-getCode">
+        <p>
+            {locale group="quiqqer/authplivo" var="control.signup.description"}
+        </p>
 
-    <label class="quiqqer-authplivo-registrar-form-phone">
-        <span class="quiqqer-authplivo-registrar-form-country"></span>
-        <input type="tel" placeholder="{locale group='quiqqer/authplivo' var='control.signup.placeholder'}"/>
-    </label>
+        <label class="quiqqer-authplivo-registrar-form-phone">
+            <span class="quiqqer-authplivo-registrar-form-country"></span>
+            <input type="tel" placeholder="{locale group='quiqqer/authplivo' var='control.signup.placeholder'}"/>
+        </label>
 
-    <button name="send-sms">
-        Send SMS
-    </button>
+        <button name="send-sms">
+            {locale group="quiqqer/authplivo" var="control.signup.smsButton"}
+        </button>
+    </section>
+
+    <section class="quiqqer-authplivo-registrar-form-auth" style="display: none">
+        <p>
+            {locale group="quiqqer/authplivo" var="control.signup.description"}
+        </p>
+
+        <label class="quiqqer-authplivo-registrar-form-auth-code">
+            <input type="text"
+                   placeholder="{locale group='quiqqer/authplivo' var='control.signup.code.placeholder'}"
+            />
+        </label>
+
+        <button name="send-sms">
+            {locale group="quiqqer/authplivo" var="control.signup.authButton"}
+        </button>
+    </section>
 </div>

@@ -351,14 +351,14 @@ define('package/quiqqer/authplivo/bin/frontend/controls/phoneData', function () 
             'cu',
             '53'
         ],
-        [
-            'Curaçao',
-            ['america', 'carribean'],
-            'cw',
-            '599',
-            '',
-            0
-        ],
+        // [
+        //     'Curaçao',
+        //     ['america', 'carribean'],
+        //     'cw',
+        //     '599',
+        //     '',
+        //     0
+        // ],
         [
             'Cyprus',
             ['europe', 'european-union'],
@@ -1096,14 +1096,14 @@ define('package/quiqqer/authplivo/bin/frontend/controls/phoneData', function () 
             'rw',
             '250'
         ],
-        [
-            'Saint Barthélemy',
-            ['america', 'carribean'],
-            'bl',
-            '590',
-            '',
-            1
-        ],
+        // [
+        //     'Saint Barthélemy',
+        //     ['america', 'carribean'],
+        //     'bl',
+        //     '590',
+        //     '',
+        //     1
+        // ],
         [
             'Saint Helena',
             ['africa'],
@@ -1122,14 +1122,14 @@ define('package/quiqqer/authplivo/bin/frontend/controls/phoneData', function () 
             'lc',
             '1758'
         ],
-        [
-            'Saint Martin',
-            ['america', 'carribean'],
-            'mf',
-            '590',
-            '',
-            2
-        ],
+        // [
+        //     'Saint Martin',
+        //     ['america', 'carribean'],
+        //     'mf',
+        //     '590',
+        //     '',
+        //     2
+        // ],
         [
             'Saint Pierre and Miquelon',
             ['america', 'north-america'],
@@ -1197,12 +1197,12 @@ define('package/quiqqer/authplivo/bin/frontend/controls/phoneData', function () 
             '65',
             '+.. ....-....'
         ],
-        [
-            'Sint Maarten',
-            ['america', 'carribean'],
-            'sx',
-            '1721'
-        ],
+        // [
+        //     'Sint Maarten',
+        //     ['america', 'carribean'],
+        //     'sx',
+        //     '1721'
+        // ],
         [
             'Slovakia',
             ['europe', 'european-union'],
@@ -1240,12 +1240,12 @@ define('package/quiqqer/authplivo/bin/frontend/controls/phoneData', function () 
             '82',
             '+.. ... .... ....'
         ],
-        [
-            'South Sudan',
-            ['africa', 'north-africa'],
-            'ss',
-            '211'
-        ],
+        // [
+        //     'South Sudan',
+        //     ['africa', 'north-africa'],
+        //     'ss',
+        //     '211'
+        // ],
         [
             'Spain',
             ['europe', 'european-union'],

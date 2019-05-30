@@ -126,6 +126,18 @@ class Plivo
             'code' => self::getAuthCode($phoneNumber)
         ]);
 
+        try {
+            $Config = QUI::getPackage('quiqqer/authplivo')->getConfig();
+
+            if ($Config->getValue('general', 'debugCodeViaLog')) {
+                QUI\System\Log::writeRecursive($message);
+
+                return;
+            }
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addDebug($Exception->getMessage());
+        }
+
         self::sendSMS($phoneNumber, $message);
     }
 

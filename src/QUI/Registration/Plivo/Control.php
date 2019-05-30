@@ -24,6 +24,10 @@ class Control extends QUI\Control
     {
         parent::__construct($attributes);
 
+        // is this control currently 2fa authentication
+        // if not, this control shows a username field, too
+        $this->setAttribute('is2FA', false);
+
         $this->addCSSFile(dirname(__FILE__).'/Control.css');
         $this->addCSSClass('quiqqer-authplivo-registrar');
         $this->setJavaScriptControl('package/quiqqer/authplivo/bin/frontend/controls/Registrar');
