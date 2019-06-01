@@ -166,6 +166,14 @@
             <de><![CDATA[Bitte gebe deinen zugesendeten Code ein.]]></de>
             <en><![CDATA[Please enter the code you received.]]></en>
         </locale>
+        <locale name="control.signup.username">
+            <de><![CDATA[Benutzername / E-mail]]></de>
+            <en><![CDATA[Username / Email]]></en>
+        </locale>
+        <locale name="control.signup.username.placeholder">
+            <de><![CDATA[Bitte gebe ein Benutzername oder E-Mail ein]]></de>
+            <en><![CDATA[Please insert Username or Email]]></en>
+        </locale>
         <locale name="control.signup.smsButton">
             <de><![CDATA[SMS senden]]></de>
             <en><![CDATA[Send SMS]]></en>

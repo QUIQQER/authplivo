@@ -31,7 +31,9 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
         initialize: function (options) {
             this.parent(options);
 
-            this.$Input           = null;
+            this.$Input    = null;
+            this.$Username = null;
+
             this.$CountrySelect   = null;
             this.$CountryDropDown = null;
             this.$SendSMS         = null;
@@ -50,7 +52,9 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
          * event: on import
          */
         $onImport: function () {
-            this.$Input           = this.getElm().getElement('[type="tel"]');
+            this.$Input    = this.getElm().getElement('[name="phone"]');
+            this.$Username = this.getElm().getElement('[name="username"]');
+
             this.$SectionGenerate = this.getElm().getElement('.quiqqer-authplivo-registrar-form-getCode');
             this.$SectionAuth     = this.getElm().getElement('.quiqqer-authplivo-registrar-form-auth');
 
@@ -195,6 +199,14 @@ define('package/quiqqer/authplivo/bin/frontend/controls/Registrar', [
          * @param event
          */
         $sendAuthCode: function (event) {
+            if (this.$Input.value === '') {
+                if (typeof this.$Input.checkValidity === 'function') {
+                    this.$Input.checkValidity();
+                }
+
+                return;
+            }
+
             event.stop();
 
             var self = this;

@@ -8,9 +8,31 @@
             {locale group="quiqqer/authplivo" var="control.signup.description"}
         </p>
 
+        {if $this->getAttribute('is2FA') === false}
+        <label class="quiqqer-authplivo-registrar-form-username">
+            <span class="quiqqer-authplivo-registrar-label">
+                {locale group="quiqqer/authplivo" var="control.signup.username"}
+            </span>
+            <input type="text"
+                   name="username"
+                   placeholder="{locale group='quiqqer/authplivo' var='control.signup.username.placeholder'}"
+                   required
+            />
+        </label>
+        {/if}
+
         <label class="quiqqer-authplivo-registrar-form-phone">
-            <span class="quiqqer-authplivo-registrar-form-country"></span>
-            <input type="tel" placeholder="{locale group='quiqqer/authplivo' var='control.signup.placeholder'}"/>
+            <span class="quiqqer-authplivo-registrar-label">
+                {locale group="quiqqer/authplivo" var="control.signup.phone"}
+            </span>
+            <span class="quiqqer-authplivo-registrar-form-phone-container">
+                <span class="quiqqer-authplivo-registrar-form-country"></span>
+                <input type="tel"
+                       name="phone"
+                       placeholder="{locale group='quiqqer/authplivo' var='control.signup.placeholder'}"
+                       required
+                />
+            </span>
         </label>
 
         <button name="send-sms">

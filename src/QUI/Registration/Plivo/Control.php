@@ -44,6 +44,10 @@ class Control extends QUI\Control
             return '';
         }
 
+        $Engine->assign([
+            'this' => $this
+        ]);
+
         return $Engine->fetch(dirname(__FILE__).'/Control.html');
     }
 }

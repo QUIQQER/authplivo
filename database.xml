@@ -6,6 +6,7 @@
             <field type="VARCHAR(255) NOT NULL PRIMARY KEY">phone</field>
             <field type="VARCHAR(255) NOT NULL">code</field>
             <field type="BIGINT(20) NULL">userId</field>
+            <field type="DATETIME NULL">expiration_date</field>
         </table>
     </global>
 
