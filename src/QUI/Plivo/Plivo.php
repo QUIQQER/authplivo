@@ -63,6 +63,44 @@ class Plivo
     }
 
     /**
+     * Validate the phone number and the code
+     *
+     * @param int|string $phoneNumber
+     * @param string $code
+     *
+     * @throws Exception
+     */
+    public static function validate($phoneNumber, $code)
+    {
+        $phoneNumber = self::cleanupPhoneNumber($phoneNumber);
+
+        try {
+            $phoneNumber = QUI\Security\Encryption::encrypt($phoneNumber);
+            $code        = QUI\Security\Encryption::encrypt($code);
+
+            $result = QUI::getDataBase()->fetch([
+                'from'  => self::table(),
+                'where' => [
+                    'phone' => $phoneNumber,
+                    'code'  => $code
+                ]
+            ]);
+
+            if (!isset($result[0])) {
+                throw new Exception([
+                    'quiqqer/authplivo',
+                    'exception.code.invalid'
+                ]);
+            }
+        } catch (\Exception $Exception) {
+            throw new Exception([
+                'quiqqer/authplivo',
+                'exception.code.invalid'
+            ]);
+        }
+    }
+
+    /**
      * Return the auth code for the phone number
      *
      * @param string|integer $phoneNumber

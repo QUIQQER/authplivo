@@ -20,9 +20,11 @@
         </locale>
         <locale name="registrar.description">
             <de><![CDATA[
-            Plivo Registrierung ermöglicht es eine Registrierung über einen SMS Auth Code zu starten.
+                Plivo Registrierung ermöglicht es eine Registrierung über einen SMS Auth Code zu starten.
             ]]></de>
-            <en><![CDATA[Plivo Registration allows you to start a registration via an SMS Auth Code.]]></en>
+            <en><![CDATA[
+                Plivo Registration allows you to start a registration via an SMS Auth Code.
+            ]]></en>
         </locale>
 
         <locale name="auth.message">
@@ -154,7 +156,7 @@
             <en><![CDATA[+]]></en>
         </locale>
 
-        <locale name="" html="true">
+        <locale name="control.signup.code.description" html="true">
             <de><![CDATA[
             Gebe bitte den Code ein den wir dir per SMS zugesendet haben. Bedenke, dies kann einige Zeit dauern bis die SMS bei dir eingetroffen ist.
             ]]></de>
@@ -169,6 +171,10 @@
         <locale name="control.signup.username">
             <de><![CDATA[Benutzername / E-mail]]></de>
             <en><![CDATA[Username / Email]]></en>
+        </locale>
+        <locale name="control.signup.phone" html="true">
+            <de><![CDATA[Deine Telefonnummer]]></de>
+            <en><![CDATA[Your phone number]]></en>
         </locale>
         <locale name="control.signup.username.placeholder">
             <de><![CDATA[Bitte gebe ein Benutzername oder E-Mail ein]]></de>

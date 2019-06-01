@@ -1,3 +1,7 @@
+.quiqqer-authplivo-registrar {
+    max-width: 500px;
+}
+
 .quiqqer-authplivo-registrar-label {
     clear: both;
     display: inline-block;
@@ -103,6 +107,7 @@
 }
 
 .quiqqer-authplivo-registrar-form-username + .quiqqer-authplivo-registrar-form-phone {
+    clear: both;
     margin-top: 1rem;
 }
 

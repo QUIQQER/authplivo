@@ -31,8 +31,7 @@ class Registrar extends FrontendUsers\AbstractRegistrar
      */
     public function getUsername()
     {
-
-        return '';
+        return $this->getAttribute('username');
     }
 
     /**
@@ -51,19 +50,71 @@ class Registrar extends FrontendUsers\AbstractRegistrar
      */
     public function validate()
     {
-        throw new FrontendUsers\Exception([
-            'quiqqer/authplivo',
-            'exception.invalid'
-        ]);
+        $username = $this->getAttribute('username');
+        $phone    = $this->getAttribute('phone');
+        $code     = $this->getAttribute('code');
+
+        // check username, if no 2FA
+        // @todo
+        if ($username) {
+            if (QUI::getUsers()->usernameExists($username)) {
+                throw new FrontendUsers\Exception([
+                    'quiqqer/authplivo',
+                    'exception.username_already_exists'
+                ]);
+            }
+        }
+
+        if (empty($phone) || empty($code)) {
+            throw new FrontendUsers\Exception([
+                'quiqqer/authplivo',
+                'exception.invalid'
+            ]);
+        }
+
+        try {
+            QUI\Plivo\Plivo::validate($phone, $code);
+        } catch (\Exception $Exception) {
+            throw new FrontendUsers\Exception([
+                'quiqqer/authplivo',
+                'exception.invalid'
+            ]);
+        }
     }
 
     /**
      * @param QUI\Interfaces\Users\User $User
      * @return void
+     *
+     * @throws FrontendUsers\Exception
      */
     public function onRegistered(QUI\Interfaces\Users\User $User)
     {
+        try {
+            $phone = $this->getAttribute('phone');
+            $code  = $this->getAttribute('code');
 
+            $phone = QUI\Security\Encryption::encrypt($phone);
+            $code  = QUI\Security\Encryption::encrypt($code);
+
+            QUI::getDataBase()->update(
+                QUI\Plivo\Plivo::table(),
+                [
+                    'userId' => $User->getId()
+                ],
+                [
+                    'phone' => $phone,
+                    'code'  => $code
+                ]
+            );
+        } catch (QUI\Exception $Exception) {
+            QUI\System\Log::addError($Exception->getMessage());
+
+            throw new FrontendUsers\Exception([
+                'quiqqer/authplivo',
+                'exception.invalid'
+            ]);
+        }
     }
 
     /**
