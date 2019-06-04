@@ -18,7 +18,7 @@ Features
 --------
 
 * Registration via SMS (w. Plivo) (requires `quiqqer/frontend-users`)
-* Authentication via SMS (v. Plivo)
+* Authentication via SMS (v. Plivo) (requires `quiqqer/frontend-users`)
 
 Installation
 ------------
